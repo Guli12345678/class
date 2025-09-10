@@ -64,28 +64,32 @@ export default class Product extends Component {
   render() {
     const { price, title, data, editingItem, discount } = this.state;
     return (
-      <div className="container mt-10">
+      <div className="container mt-10  text-center">
         <h2>Product</h2>
-        <form onSubmit={this.handleSubmit} action="" className="flex gap-10">
+        <form
+          onSubmit={this.handleSubmit}
+          action=""
+          className="flex gap-10  justify-center mt-10"
+        >
           <input
             value={title}
             onChange={(e) => this.setState({ title: e.target.value })}
             type="text"
-            className="shadow-lg"
+            className="shadow-lg indent-3"
             placeholder="title"
           />
           <input
             value={discount}
             onChange={(e) => this.setState({ discount: e.target.value })}
             type="text"
-            className="shadow-lg"
+            className="shadow-lg indent-3"
             placeholder="discount"
           />
           <input
             value={price}
             onChange={(e) => this.setState({ price: e.target.value })}
             type="number"
-            className="shadow-lg "
+            className="shadow-lg indent-3"
             placeholder="price"
           />
           <button className="px-4 py-2 bg-blue-500 text-white">
@@ -110,13 +114,13 @@ export default class Product extends Component {
               <div className="flex gap-4 mt-5">
                 <button
                   onClick={() => this.handleDelete(product.id)}
-                  className="px-3 py-1 bg-red-500 text-white rounded  transition"
+                  className="px-3 py-1 bg-red-500 text-white rounded "
                 >
                   delete
                 </button>
                 <button
                   onClick={() => this.handleUpdate(product)}
-                  className="px-3 py-1 bg-green-400 text-white rounded transition"
+                  className="px-3 py-1 bg-green-400 text-white rounded"
                 >
                   update
                 </button>

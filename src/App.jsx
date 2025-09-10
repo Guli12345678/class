@@ -8,6 +8,7 @@ function App() {
       <Header />
       <Routes>
         <Route path="/users" element={<User />} />
+        <Route path="/products" element={<Product />} />
       </Routes>
     </>
   );

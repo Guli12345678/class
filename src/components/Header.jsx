@@ -8,7 +8,10 @@ const Header = () => {
         <h2 className="text-2xl bg-whtie font-semibold tracking-tight  ">
           Header
         </h2>
-        <ul>
+        <ul className="flex gap-10">
+          <li>
+            <a href="/products">Home</a>
+          </li>
           <li>
             <a href="/users">Users</a>
           </li>

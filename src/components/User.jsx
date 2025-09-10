@@ -47,9 +47,13 @@ export default class User extends Component {
   render() {
     const { age, name, data, editingItem } = this.state;
     return (
-      <div className="max-w-md mx-auto p-6 bg-white shadow-md rounded-md ">
+      <div className="max-w-md mx-auto p-6 bg-white shadow-md rounded-md mt-20">
         <h2 className="text-xl font-semibold text-gray-800 mb-4">User</h2>
-        <form onSubmit={this.handleSubmit} action="" className="">
+        <form
+          onSubmit={this.handleSubmit}
+          action=""
+          className="flex flex-col gap-10"
+        >
           <input
             className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-200"
             value={name}
@@ -68,19 +72,19 @@ export default class User extends Component {
         </form>
         <div className="mt-6 space-y-4">
           {data?.map((user) => (
-            <div key={user.id} className="border p-4 rounded-md shadow-sm">
+            <div key={user.id} className="border p-4 rounded-md shadow-lg">
               <h3 className="text-lg font-medium text-gray-700">{user.name}</h3>
               <p className="text-sm text-gray-500">{user.age} years old</p>
               <div className="mt-2 space-x-2">
                 <button
                   onClick={() => this.handleDelete(user.id)}
-                  className="px-3 py-1 bg-red-500 text-white rounded hover:bg-red-600 transition"
+                  className="px-3 py-1 bg-red-500 text-white rounded transition"
                 >
                   delete
                 </button>
                 <button
                   onClick={() => this.handleUpdate(user)}
-                  className="px-3 py-1 bg-yellow-400 text-white rounded hover:bg-yellow-500 transition"
+                  className="px-3 py-1 bg-green-400 text-white rounded hover:bg-yellow-500 transition"
                 >
                   update
                 </button>
