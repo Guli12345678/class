@@ -92,7 +92,7 @@ export default class Product extends Component {
             className="shadow-lg indent-3"
             placeholder="price"
           />
-          <button className="px-4 py-2 bg-blue-500 text-white">
+          <button className="px-4 py-2 bg-blue-500 text-white rounded-md">
             {editingItem ? "update" : "submit"}
           </button>
         </form>
