@@ -1,5 +1,6 @@
 import React from "react";
 import User from "./User";
+import { NavLink } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -10,10 +11,10 @@ const Header = () => {
         </h2>
         <ul className="flex gap-10">
           <li>
-            <a href="/products">Home</a>
+            <NavLink href="/products">Home</NavLink>
           </li>
           <li>
-            <a href="/users">Users</a>
+            <NavLink href="/users">Users</NavLink>
           </li>
         </ul>
       </div>
