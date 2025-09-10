@@ -55,18 +55,18 @@ export default class User extends Component {
           className="flex flex-col gap-10"
         >
           <input
-            className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-200"
+            className="w-full px-4 py-2 border border-gray-300 rounded-md"
             value={name}
             onChange={(e) => this.setState({ name: e.target.value })}
             type="text"
           />
           <input
-            className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-200"
+            className="w-full px-4 py-2 border border-gray-300 rounded-md "
             value={age}
             onChange={(e) => this.setState({ age: e.target.value })}
             type="number"
           />
-          <button className="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition">
+          <button className="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 ">
             {editingItem ? "update" : "submit"}
           </button>
         </form>
@@ -78,13 +78,13 @@ export default class User extends Component {
               <div className="mt-2 space-x-2">
                 <button
                   onClick={() => this.handleDelete(user.id)}
-                  className="px-3 py-1 bg-red-500 text-white rounded transition"
+                  className="px-3 py-1 bg-red-500 text-white rounded "
                 >
                   delete
                 </button>
                 <button
                   onClick={() => this.handleUpdate(user)}
-                  className="px-3 py-1 bg-green-400 text-white rounded hover:bg-yellow-500 transition"
+                  className="px-3 py-1 bg-green-400 text-white rounded hover:bg-yellow-500 "
                 >
                   update
                 </button>
