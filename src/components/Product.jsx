@@ -88,7 +88,7 @@ export default class Product extends Component {
             className="shadow-lg "
             placeholder="price"
           />
-          <button className="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition duration-200">
+          <button className="px-4 py-2 bg-blue-500 text-white">
             {editingItem ? "update" : "submit"}
           </button>
         </form>
