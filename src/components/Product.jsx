@@ -17,20 +17,24 @@ export default class Product extends Component {
     if (Number(price) < 0) {
       return alert("xato");
     }
+    if (Number(discount) > 100) {
+      return alert("Discount has exceeded the limit!");
+    }
 
     if (editingItem) {
       const editedData = data.map((product) =>
         product.id === editingItem.id
-          ? { id: editingItem.id, title, price }
+          ? { id: editingItem.id, title, price, discount }
           : product
       );
       this.setState({
         data: editedData,
         title: "",
         price: "",
-        discount: "",
+        discount,
         editingItem: null,
       });
+      console.log(discount);
     } else {
       const product = {
         id: Date.now(),
@@ -54,7 +58,7 @@ export default class Product extends Component {
       title: product.title,
       price: product.price,
       editingItem: product,
-      discount: product.discount,
+      discount: Number(product.discount),
     });
   };
   handleCancel = () => {
@@ -81,7 +85,7 @@ export default class Product extends Component {
           <input
             value={discount}
             onChange={(e) => this.setState({ discount: e.target.value })}
-            type="text"
+            type="number"
             className="shadow-lg indent-3"
             placeholder="discount"
           />
@@ -97,17 +101,21 @@ export default class Product extends Component {
           </button>
         </form>
         <div>
+          {console.log(data)}
           {data?.map((product) => (
-            <div className="mt-8 p-4 bg-white rounded-md shadow-sm border border-gray-200">
+            <div
+              key={product.id}
+              className="mt-8 p-4 bg-white rounded-md shadow-sm border border-gray-200"
+            >
               <h3 className="text-lg font-semibold text-gray-800">
                 Title: {product.title}
               </h3>
               <h3> Discount: {product.discount}</h3>
               <p className="text-sm text-gray-500">{product.price} USD</p>
               <p className="text-sm text-gray-500">
-                With discount:{" "}
+                With discount:
                 {product.price -
-                  (product.price * Number(product.discount)) / 100}{" "}
+                  (product.price * Number(product.discount)) / 100}
                 USD
               </p>
 

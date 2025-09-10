@@ -84,7 +84,7 @@ export default class User extends Component {
                 </button>
                 <button
                   onClick={() => this.handleUpdate(user)}
-                  className="px-3 py-1 bg-green-400 text-white rounded hover:bg-yellow-500 "
+                  className="px-3 py-1 bg-green-400 text-white rounded  "
                 >
                   update
                 </button>
